@@ -11,3 +11,8 @@ For all target pdf files:
 
 1. add prefix "encrypted_" to the pdf file name
 2. output decrypted one as original pdf file name
+
+This tool needs "qpdf" command  
+Homebrew provides qpdf: `brew install qpdf`  
+This site is detailed about qpdf  
+http://pdf-file.nnn2.com/?p=865
