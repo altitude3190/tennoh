@@ -1,7 +1,7 @@
 #!/usr/bin/env bash -eu
 
 if ! type qpdf > /dev/null 2>&1; then
-    echo "please install qpdf with `brew install qpdf`"
+    echo "please install qpdf with \`brew install qpdf\`"
     exit 1
 fi
 
