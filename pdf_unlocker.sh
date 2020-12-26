@@ -14,7 +14,7 @@ tty -s && echo
 dir=${1:-'.'}
 cd $dir
 
-for file in `ls | grep '.pdf'`; do
+for file in *.pdf; do
     mv "$file" "encrypted_$file"
-    qpdf --password=$pass --decrypt "encrypted_$file" $file
+    qpdf --password=$pass --decrypt "encrypted_$file" "$file"
 done
