@@ -12,9 +12,10 @@ tty -s && echo
 # https://qiita.com/m-yamashita/items/889c116b92dc0bf4ea7d
 # if $1 is defined, then dir=$1, else dir='.'
 dir=${1:-'.'}
-cd $dir
 
-for file in *.pdf; do
-    mv "$file" "encrypted_$file"
-    qpdf --password=$pass --decrypt "encrypted_$file" "$file"
-done
+(cd $dir
+    mkdir -p decrypted
+    for file in *.pdf; do
+        qpdf --password=$pass --decrypt "$file" "./decrypted/$file"
+    done
+)
