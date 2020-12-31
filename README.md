@@ -1,18 +1,24 @@
 # pdf_password_unlocker
 
-```
-bash pdf_unlocker.sh [dir_name]
+This is a script which decrypt encrypted pdf files and output decrypted one.
+This script needs [qpdf](https://github.com/qpdf/qpdf).
 
-# dir_name: directory name which places pdf files
+## USAGE
+
+```
+./pdf_unlocker.sh [dir_name]
+```
+
+## PARAMS
+
+```
+dir_name    directory name where encrypted pdf files are located
             if it is undefined, the target directory becomes '.'
 ```
 
-For all target pdf files:
+## DESCRIPTION
 
-1. add prefix "encrypted_" to the pdf file name
-2. output decrypted one as original pdf file name
+`pdf_unlocker.sh` executes the following:
 
-This tool needs "qpdf" command  
-Homebrew provides qpdf: `brew install qpdf`  
-This site is detailed about qpdf  
-http://pdf-file.nnn2.com/?p=865
+1. make a directory named "decrypted" in `[dir_name]`
+2. decrypt files in `[dir_name]` one by one and output them to "decrypted" directory
