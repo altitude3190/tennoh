@@ -1,4 +1,6 @@
-#!/usr/bin/env bash -eu
+#!/bin/bash
+
+set -euo pipefail
 
 if ! type qpdf > /dev/null 2>&1; then
     echo "please install qpdf with \`brew install qpdf\`"
@@ -16,6 +18,9 @@ dir=${1:-'.'}
 (cd $dir
     mkdir -p decrypted
     for file in *.pdf; do
+        echo "decrypting $file ..."
+        set +e
         qpdf --password=$pass --decrypt "$file" "./decrypted/$file"
+        set -e
     done
 )
